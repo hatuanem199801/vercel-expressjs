@@ -1,13 +1,13 @@
 const express = require("express");
 const app = express();
-const product = require("./api/product");
+const product = require("./product");
 
 if (process.env.NODE_ENV !== "production") {
   require("dotenv").config();
 }
 
 // Connect to database.
-require("./libs/db")();
+require("../libs/db")();
 const PORT = process.env.PORT || 8080;
 
 app.use("/api/product", product);
